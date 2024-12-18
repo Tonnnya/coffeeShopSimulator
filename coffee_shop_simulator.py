@@ -20,7 +20,7 @@ class CoffeeShopSimulator:
     # Faux temp distributions. We'll do this better
     # later with a bell curve, but for now a quick hack
 
-    def __init__(self, player_name, shop_name):
+    def __init__(self):
 
         # Get name and coffee shop name
         print("Let's collect some information before we start the game.\n")
