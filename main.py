@@ -7,8 +7,8 @@ from pathlib import Path
 from coffee_shop_simulator import CoffeeShopSimulator
 
 # Print welcome message
-print("Coffee Shop Simulator 2024, Version 1.00")
-print("Copyright (C) 2024 Tonnnya, All Rights Reserved.\n")
+print("Coffee Shop Simulator 2024, Version 1.10")
+print("Copyright(C) 2024 Tonnnya, All Rights Reserved\n")
 
 # If save file exists, see if the player wants to load it
 run_game = True
