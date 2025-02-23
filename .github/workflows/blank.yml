@@ -93,7 +93,7 @@ jobs:
         convert -size 800x600 xc:white -font Arial -pointsize 30 -fill black -draw "text 50,300 'Test Output'" screenshot.png
     
     - name: Upload screenshot
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: screenshot
         path: ./screenshot.png
