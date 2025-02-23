@@ -8,11 +8,7 @@ from coffee_shop_simulator import CoffeeShopSimulator
 
 # Print welcome message
 print("Coffee Shop Simulator 2024, Version 1.10")
-<<<<<<< Updated upstream
-print("Copyright(C) 2024 Tonnnya, All Rights Reserved\n")
-=======
 print("Copyright (C) 2024 Tonnnya, All Rights Reserved\n")
->>>>>>> Stashed changes
 
 # If save file exists, see if the player wants to load it
 run_game = True
