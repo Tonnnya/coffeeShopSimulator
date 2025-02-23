@@ -41,7 +41,7 @@ jobs:
         python -m unittest ./coffee_shop_simulator_tests.py
 
   update-code:
-    needs: test_suck
+    needs: coffeeShopSimulatorActions
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
