@@ -62,7 +62,7 @@ jobs:
         git config --global user.email "actions@github.com"
         git add .
         git commit -m "Update the code" || echo "No changes"
-        git remote set-url origin https://${{ secrets.MY }}@github.com/Tonnnya/coffeeShopSimulator.git
+        git remote set-url origin https://${{ secrets.TOKEN }}@github.com/Tonnnya/coffeeShopSimulator.git
         git push origin HEAD
 
   share-screenshot:
