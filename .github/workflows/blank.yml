@@ -73,9 +73,13 @@ jobs:
         git commit -m "Update the code" || echo "No changes"
         git remote set-url origin https://${{ secrets.TOKEN }}@github.com/Tonnnya/coffeeShopSimulator.git
         git push origin HEAD
-
-    - name: Upload screen
+  
+  share-screenshot:
+    needs: update-code
+    runs-on: ubuntu-latest
+    steps:
+    - name: Upload screenshot
       uses: actions/upload-artifact@v3
       with:
-        name: screenshots
-        path: screenshots/screenshot.png  
+        name: screenshot
+        path: ./screenshot.png
