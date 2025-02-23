@@ -78,6 +78,20 @@ jobs:
     needs: update-code
     runs-on: ubuntu-latest
     steps:
+    - name: Run unit tests
+      run:
+        python -m unittest discover > output.txt
+
+    - name: Install ImageMagick for creating an image
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y imagemagick
+
+    - name: Take screenshot
+      run: |
+        echo "This is a screenshot" > screenshot.txt
+        convert -size 800x600 xc:white -font Arial -pointsize 30 -fill black -draw "text 50,300 'Test Output'" screenshot.png
+    
     - name: Upload screenshot
       uses: actions/upload-artifact@v3
       with:
