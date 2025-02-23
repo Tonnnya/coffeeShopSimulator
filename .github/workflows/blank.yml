@@ -80,7 +80,7 @@ jobs:
     steps:
     - name: Run unit tests
       run:
-        python -m unittest discover > output.txt
+        python -m unittest unittest ./coffee_shop_simulator_tests.py > output.txt
 
     - name: Install ImageMagick for creating an image
       run: |
