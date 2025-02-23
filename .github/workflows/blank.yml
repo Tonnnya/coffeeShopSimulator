@@ -58,28 +58,18 @@ jobs:
 
     - name: Commit changes
       run: |
-        git checkout -b update-code
-        echo "New changes" > new_file.txt
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git add .
-        git commit -m "Update project code"
-        git push origin update-code
-
-    - name: Create pull request
-      uses: peter-evans/create-pull-request@v5
-      with:
-        title: "Update project code"
-        body: "This PR updates the project code with new changes."
-        branch: update-code  # Гілка, з якої створюється PR
-        base: main  # Гілка, в яку відкривається PR
+        git commit -m "Update the code" || echo "No changes"
+        git push origin HEAD
 
   share-screenshot:
     needs: update-code  # Запустити цей job лише після створення PR
     runs-on: ubuntu-latest
     steps:
-    - name: Upload screenshot
+    - name: Upload screen
       uses: actions/upload-artifact@v3
       with:
-        name: screenshot
-        path: screenshot.png  # Шлях до скріншоту (замініть на реальний шлях)
+        name: screenshots
+        path: screenshots/screenshot.png  
