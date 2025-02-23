@@ -38,7 +38,5 @@ jobs:
 
     - name: Run tests
       run:
-        python -m unittest test_coffee_shop_simulator.py
+        python -m unittest ./test_coffee_shop_simulator.py
         
-    - name: Run application
-      run: python main.py
