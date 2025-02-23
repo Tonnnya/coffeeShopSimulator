@@ -75,7 +75,8 @@ jobs:
         git add .
         git commit -m "Update the code" || echo "No changes"
         git remote set-url origin https://${{ secrets.TOKEN }}@github.com/Tonnnya/coffeeShopSimulator.git
-        git push origin BRANCH_NAME
+        git pull --rebase origin $BRANCH_NAME
+        git push origin $BRANCH_NAME
 
   
   share-screenshot:
