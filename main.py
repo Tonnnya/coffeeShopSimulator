@@ -8,7 +8,7 @@ from coffee_shop_simulator import CoffeeShopSimulator
 
 # Print welcome message
 print("Coffee Shop Simulator 2024, Version 1.00")
-print("Copyright (C) 2024 Tonya Smetanina, All Rights Reserved.\n")
+print("Copyright (C) 2024 Tonnnya, All Rights Reserved.\n")
 
 # If save file exists, see if the player wants to load it
 run_game = True
@@ -31,7 +31,7 @@ if run_game:
     game.run()
 
 # Say goodbay!
-print(f'\nThank for playing. Have a great rest of your day!\n')
+print(f'\nThank you for playing. Have a great rest of your day!\n')
 
 
 
