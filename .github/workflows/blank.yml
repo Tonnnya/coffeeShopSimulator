@@ -62,10 +62,11 @@ jobs:
         git config --global user.email "actions@github.com"
         git add .
         git commit -m "Update the code" || echo "No changes"
+        git remote set-url origin https://${{ secrets.MY }}@github.com/Tonnnya/coffeeShopSimulator.git
         git push origin HEAD
 
   share-screenshot:
-    needs: update-code  # Запустити цей job лише після створення PR
+    needs: update-code
     runs-on: ubuntu-latest
     steps:
     - name: Upload screen
