@@ -74,10 +74,6 @@ jobs:
         git remote set-url origin https://${{ secrets.TOKEN }}@github.com/Tonnnya/coffeeShopSimulator.git
         git push origin HEAD
 
-  share-screenshot:
-    needs: update-code
-    runs-on: ubuntu-latest
-    steps:
     - name: Upload screen
       uses: actions/upload-artifact@v3
       with:
