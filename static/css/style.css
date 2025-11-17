@@ -1,0 +1,446 @@
+/* Coffee Shop Simulator Styles */
+
+:root {
+    --primary-color: #6F4E37;      /* Coffee brown */
+    --secondary-color: #D2691E;     /* Light brown */
+    --accent-color: #FFD700;        /* Gold */
+    --success-color: #4CAF50;       /* Green */
+    --danger-color: #F44336;        /* Red */
+    --background: #F5F1E8;          /* Cream */
+    --card-bg: #FFFFFF;
+    --text-dark: #2C1810;
+    --text-light: #6F6F6F;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--background) 0%, #E8DCC4 100%);
+    color: var(--text-dark);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow-lg);
+}
+
+.header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tagline {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Screens */
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cards */
+.card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.welcome-card {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.welcome-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+.welcome-card p {
+    color: var(--text-light);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Stats Panel */
+.stats-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stat-card.highlight {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.stat-icon {
+    font-size: 2.5em;
+}
+
+.stat-info {
+    flex: 1;
+}
+
+.stat-label {
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Game Area */
+.game-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .game-area {
+        grid-template-columns: 1fr;
+    }
+}
+
+.decision-panel h2,
+.results-panel h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+
+.label-icon {
+    font-size: 1.3em;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #E0E0E0;
+    border-radius: 8px;
+    font-size: 1.1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: var(--text-light);
+    font-size: 0.9em;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+.btn-secondary {
+    background: #E0E0E0;
+    color: var(--text-dark);
+}
+
+.btn-secondary:hover {
+    background: #D0D0D0;
+}
+
+.btn-danger {
+    background: var(--danger-color);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #D32F2F;
+}
+
+.btn-large {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.3em;
+    margin-top: 10px;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.action-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Results Panel */
+.results-panel {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: var(--background);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.result-label {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.result-value {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.result-value.positive {
+    color: var(--success-color);
+}
+
+.result-value.negative {
+    color: var(--danger-color);
+}
+
+/* Game Over */
+.game-over-card {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.game-over-card h2 {
+    font-size: 3em;
+    color: var(--danger-color);
+    margin-bottom: 20px;
+}
+
+.final-stats {
+    background: var(--background);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 2em;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: var(--text-dark);
+}
+
+/* History Table */
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.history-table th,
+.history-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.history-table th {
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+.history-table tr:hover {
+    background: var(--background);
+}
+
+/* Toast Notifications */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px 25px;
+    background: var(--text-dark);
+    color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.3s ease;
+    z-index: 2000;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast.success {
+    background: var(--success-color);
+}
+
+.toast.error {
+    background: var(--danger-color);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .stats-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+}

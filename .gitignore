@@ -35,6 +35,11 @@ env/
 # Game save files
 savegame.dat
 
+# Flask
+instance/
+.webassets-cache
+*.db
+
 # OS
 .DS_Store
 Thumbs.db

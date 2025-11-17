@@ -16,11 +16,14 @@ The game features a realistic sales simulation that factors in temperature, adve
 
 ## 🎮 Features
 
+- **🌐 Modern Web Interface** - Beautiful, responsive design with real-time updates
+- **💻 CLI Mode** - Classic command-line experience for purists
 - **Interactive gameplay loop** with daily decision-making
 - **Dynamic weather system** (temperatures ranging from 20°F to 90°F)
 - **Sales simulation** based on multiple variables
 - **Persistent game saves** - continue your progress anytime
 - **Business strategy** - balance pricing, advertising, and inventory
+- **📊 Sales history tracking** - analyze your performance over time
 
 ## 🚀 Getting Started
 
@@ -43,6 +46,20 @@ pip install -r requirements.txt
 ```
 
 ### Running the Game
+
+**Option 1: Web Interface (Recommended)**
+
+The web version provides a beautiful, modern interface with real-time updates:
+
+```bash
+python app.py
+```
+
+Then open your browser to: **http://localhost:5000**
+
+**Option 2: Command Line Interface**
+
+For the classic text-based experience:
 
 ```bash
 python main.py
@@ -88,7 +105,15 @@ The sales algorithm considers:
 ```
 coffeeShopSimulator/
 ├── coffee_shop_simulator.py    # Main game logic and CoffeeShopSimulator class
-├── main.py                      # Entry point and save/load functionality
+├── main.py                      # CLI entry point and save/load functionality
+├── app.py                       # Flask web server and API endpoints
+├── templates/
+│   └── index.html              # Web interface HTML
+├── static/
+│   ├── css/
+│   │   └── style.css           # Beautiful coffee-themed styles
+│   └── js/
+│       └── game.js             # Frontend game logic and API calls
 ├── utilities.py                 # Utility functions (deprecated)
 ├── coffee_shop_simulator_tests.py  # Unit tests
 ├── requirements.txt             # Python dependencies
@@ -98,6 +123,29 @@ coffeeShopSimulator/
 ### Dependencies
 
 - `numpy==2.1.2` - For realistic temperature distribution calculations
+- `flask==3.0.0` - Web framework for the modern UI
+
+## 🌐 Web Interface Features
+
+The new web interface offers:
+
+- **Modern, Responsive Design** - Works on desktop, tablet, and mobile
+- **Real-time Statistics** - See your cash, inventory, and sales at a glance
+- **Intuitive Controls** - Easy-to-use forms for daily decisions
+- **Visual Feedback** - Animated results and notifications
+- **Sales History** - View detailed history of past days
+- **Save/Load System** - Persist your game progress
+- **Coffee-Themed UI** - Beautiful brown and gold color scheme
+
+### API Endpoints
+
+The Flask server provides RESTful API endpoints:
+
+- `POST /api/new-game` - Start a new game session
+- `GET /api/game-state` - Get current game state
+- `POST /api/play-day` - Process one day of gameplay
+- `POST /api/save-game` - Save game to disk
+- `POST /api/load-game` - Load saved game
 
 ## 📝 License
 
