@@ -1,4 +1,8 @@
-# Import all functions from the utility module
+"""
+Coffee Shop Simulator - Main Entry Point
+
+A text-based business simulation game where players manage their own coffee shop.
+"""
 import pickle
 import re
 from pathlib import Path
@@ -30,7 +34,7 @@ if run_game:
     game = CoffeeShopSimulator()
     game.run()
 
-# Say goodbay!
+# Say goodbye!
 print(f'\nThank you for playing. Have a great rest of your day!\n')
 
 
